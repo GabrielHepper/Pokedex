@@ -1,0 +1,73 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: orange;
+}
+
+#List {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+li {
+    display: flex;
+    background-color: white;
+    align-items: center;
+    border-radius: 10px;
+    width: 300px; 
+    margin-bottom: 10px;
+    border: 1px solid black; 
+    box-sizing: border-box; 
+}
+
+img {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+li p{
+    margin-left: 2.5vw;
+    margin-bottom: 7vh;
+}
+
+.buttonDiv {
+    display: flex;
+    position: absolute;
+    margin-left: 8.5vw;
+    margin-top: 8vh;
+}
+
+.buttonDiv .adicionarButton{
+    margin-left: 1vw;
+    padding: 2px;
+}
+
+.type-fire{
+    background-color: rgb(245, 18, 18);
+}
+
+.type-water{
+    background-color: rgb(41, 41, 230);
+}
+
+.type-grass{
+    background-color: rgb(2, 160, 2);
+}
+
+.type-bug{
+    background-color: rgb(14, 90, 14);
+}
+
+.type-normal{
+    background-color: gray;
+}
