@@ -10,7 +10,6 @@ fetch(`https://pokeapi.co/api/v2/pokemon`)
           const pokemons = document.createElement("li");
 
           const pokemonType = pokemonData.types.length > 0 ? pokemonData.types[0].type.name : '';
-
           pokemons.classList.add(`type-${pokemonType}`);
 
           let buttonDiv = document.createElement("div");
@@ -36,13 +35,19 @@ fetch(`https://pokeapi.co/api/v2/pokemon`)
           buttonDiv.appendChild(adicionarButton);
 
           pokemons.innerHTML = `
-            <img src="${pokemonData.sprites.front_default}" alt="Foto do Pokémon">
-            <div>
+            <div class="foto">
+                <img src="${pokemonData.sprites.front_default}" alt="Foto do Pokémon">
+                <div class="tipo">
+                    <p>${pokemonData.types[0].type.name} ${pokemonData.types[1] ? pokemonData.types[1].type.name : ''}</p>
+                </div>
+            </div>
+           
+            <div class="nome">
                 <p>${pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1)}</p>
+                   ${buttonDiv.outerHTML}
             </div>
           `;
 
-          pokemons.appendChild(buttonDiv);
           lista.appendChild(pokemons);
         })
     })

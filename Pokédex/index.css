@@ -22,7 +22,7 @@ li {
     background-color: white;
     align-items: center;
     border-radius: 10px;
-    width: 300px; 
+    width: 23vw; 
     margin-bottom: 10px;
     border: 1px solid black; 
     box-sizing: border-box; 
@@ -31,25 +31,49 @@ li {
 img {
     width: 100px;
     height: auto;
-    margin-right: 10px;
-    border-radius: 50%;
 }
 
-li p{
-    margin-left: 2.5vw;
-    margin-bottom: 7vh;
-}
-
-.buttonDiv {
+.foto{
     display: flex;
-    position: absolute;
-    margin-left: 8.5vw;
-    margin-top: 8vh;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-left: 2vw;
 }
 
-.buttonDiv .adicionarButton{
-    margin-left: 1vw;
-    padding: 2px;
+.foto .tipo{
+    margin-bottom: 2vh;
+}
+
+
+.nome{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    margin: 6vh 0 0 2vw;
+    
+}
+
+.nome p{
+    margin-bottom: 10vh;
+}
+
+.buttonDiv{
+    padding-bottom: 4vh;
+}
+
+
+.nome .detalhesButton{
+    margin-right: 10px;
+}
+
+.tipo{
+    display: flex;
+    justify-content: center;
+    margin: 1vh 0 0 0;
+    text-align: center;
 }
 
 .type-fire{
