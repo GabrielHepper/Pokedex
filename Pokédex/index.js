@@ -36,17 +36,28 @@ fetch(`https://pokeapi.co/api/v2/pokemon`)
 
           pokemons.innerHTML = `
             <div class="foto">
-                <img src="${pokemonData.sprites.front_default}" alt="Foto do Pokémon">
-                <div class="tipo">
-                    <p>${pokemonData.types[0].type.name} ${pokemonData.types[1] ? pokemonData.types[1].type.name : ''}</p>
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonData.id}.png" alt="Foto do Pokémon">
+            <div class="tipo">
+                    <p>${pokemonData.types[0].type.name}</p>  <span>${pokemonData.types[1] ? pokemonData.types[1].type.name : ''}</span>
                 </div>
             </div>
-           
+
             <div class="nome">
                 <p>${pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1)}</p>
                    ${buttonDiv.outerHTML}
             </div>
           `;
+
+          if (pokemonType) {
+            const type = pokemonData.types[0].type.name;
+            if (type === "grass" ) {
+                pokemons.style.color = "rgb(2, 194, 2)";
+            } else if (type === "fire") {
+                pokemons.style.color = "red";
+            } else if (type === "water") {
+                pokemons.style.color = "rgb(80, 80, 270)";
+            }
+          }
 
           lista.appendChild(pokemons);
         })

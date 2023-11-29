@@ -31,6 +31,7 @@ li {
 img {
     width: 100px;
     height: auto;
+    margin-bottom: 5px;
 }
 
 .foto{
@@ -39,6 +40,7 @@ img {
     justify-content: center;
     text-align: center;
     margin-left: 2vw;
+    align-items: center;
 }
 
 .foto .tipo{
@@ -62,12 +64,32 @@ img {
 
 .buttonDiv{
     padding-bottom: 4vh;
-    margin-left: 5px;
+    margin-left: 7px;
+}
+
+.buttonDiv button:hover {
+    opacity: 0.7;
+}
+
+.buttonDiv button:active {
+    transform: translateY(2px);
 }
 
 
-.nome .detalhesButton{
+.detalhesButton{
     margin-right: 10px;
+    background-color: white;
+    color: black;
+}
+
+.adicionarButton{
+    background-color: black;
+    color: white;
+}
+
+.detalhesButton, .adicionarButton{
+    cursor: pointer;
+    border: solid 1px black;
 }
 
 .tipo{
@@ -75,24 +97,41 @@ img {
     justify-content: center;
     margin: 1vh 0 0 0;
     text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tipo p{
+    margin-bottom: 5px;
+    background-color: rgb(97, 97, 97, 0.5);
+    width: fit-content;
+    border-radius: 10px;
+    padding: 4px;
+}
+
+.tipo span:not(:empty) {
+    background-color: rgba(97, 97, 97, 0.5);
+    width: fit-content;
+    border-radius: 10px;
+    padding: 4px;
 }
 
 .type-fire{
-    background: linear-gradient(to right, red 50%, rgb(247, 223, 223) 50%);
+    background: linear-gradient(to right, red 50%, rgb(244, 240, 240) 50%);
 }
 
 .type-water{
-    background: linear-gradient(to right, rgb(41, 41, 230)50%, rgb(247, 223, 223) 50%);
+    background: linear-gradient(to right, rgb(41, 41, 230)50%, rgb(244, 240, 240) 50%);
 }
 
 .type-grass{
-    background: linear-gradient(to right, rgb(2, 160, 2)50%, rgb(247, 223, 223) 50%);
+    background: linear-gradient(to right, rgb(2, 160, 2)50%, rgb(244, 240, 240) 50%);
 }
 
 .type-bug{
-    background: linear-gradient(to right, rgb(14, 90, 14)50%, rgb(247, 223, 223) 50%);
+    background: linear-gradient(to right, rgb(14, 90, 14)50%, rgb(244, 240, 240) 50%);
 }
 
 .type-normal{
-    background: linear-gradient(to right, gray 50%, rgb(247, 223, 223) 50%);
+    background: linear-gradient(to right, gray 50%, rgb(244, 240, 240) 50%);
 }
