@@ -62,6 +62,7 @@ img {
 
 .buttonDiv{
     padding-bottom: 4vh;
+    margin-left: 5px;
 }
 
 
@@ -77,21 +78,21 @@ img {
 }
 
 .type-fire{
-    background-color: rgb(245, 18, 18);
+    background: linear-gradient(to right, red 50%, rgb(247, 223, 223) 50%);
 }
 
 .type-water{
-    background-color: rgb(41, 41, 230);
+    background: linear-gradient(to right, rgb(41, 41, 230)50%, rgb(247, 223, 223) 50%);
 }
 
 .type-grass{
-    background-color: rgb(2, 160, 2);
+    background: linear-gradient(to right, rgb(2, 160, 2)50%, rgb(247, 223, 223) 50%);
 }
 
 .type-bug{
-    background-color: rgb(14, 90, 14);
+    background: linear-gradient(to right, rgb(14, 90, 14)50%, rgb(247, 223, 223) 50%);
 }
 
 .type-normal{
-    background-color: gray;
+    background: linear-gradient(to right, gray 50%, rgb(247, 223, 223) 50%);
 }
