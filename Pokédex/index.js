@@ -27,12 +27,7 @@ fetch(`https://pokeapi.co/api/v2/pokemon`)
             console.log("Detalhes do Pokémon:", pokemonData.name);
           };
 
-          adicionarButton.onclick = function() {
-            console.log("Pokémon adicionado com sucesso!");
-          };
-
-          buttonDiv.appendChild(detalhesButton);
-          buttonDiv.appendChild(adicionarButton);
+          pokemons.id =`pokemon${pokemonData.id}`
 
           pokemons.innerHTML = `
             <div class="foto">
@@ -45,6 +40,11 @@ fetch(`https://pokeapi.co/api/v2/pokemon`)
             <div class="nome">
                 <p>${pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1)}</p>
                    ${buttonDiv.outerHTML}
+            </div>
+
+            <div id="botao">
+              <button id="btjs" onClick="adiciona(${pokemonData.id})">Adicionar</button>
+              <button id="btjsExcluir">Detalhes</button>
             </div>
           `;
 
@@ -63,3 +63,9 @@ fetch(`https://pokeapi.co/api/v2/pokemon`)
         })
     })
   });
+
+  function adiciona(id) {
+    const div = document.getElementById(`pokemon${id}`)
+    div.remove()
+    console.log("Pokémon adicionado com sucesso!");
+  };
