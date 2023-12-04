@@ -12,21 +12,7 @@ fetch(`https://pokeapi.co/api/v2/pokemon`)
           const pokemonType = pokemonData.types.length > 0 ? pokemonData.types[0].type.name : '';
           pokemons.classList.add(`type-${pokemonType}`);
 
-          let buttonDiv = document.createElement("div");
-          buttonDiv.classList.add("buttonDiv");
-
-          let detalhesButton = document.createElement("button");
-          detalhesButton.innerText = "Detalhes";
-          detalhesButton.classList.add("detalhesButton");
-
-          let adicionarButton = document.createElement("button");
-          adicionarButton.innerText = "Adicionar";
-          adicionarButton.classList.add("adicionarButton");
-
-          detalhesButton.onclick = function() {
-            console.log("Detalhes do Pokémon:", pokemonData.name);
-          };
-
+         
           pokemons.id =`pokemon${pokemonData.id}`
 
           pokemons.innerHTML = `
@@ -37,14 +23,15 @@ fetch(`https://pokeapi.co/api/v2/pokemon`)
                 </div>
             </div>
 
-            <div class="nome">
-                <p>${pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1)}</p>
-                   ${buttonDiv.outerHTML}
-            </div>
+            <div class="direita">
+              <div class="nome">
+                  <p>${pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1)}</p>
+              </div>
 
-            <div id="botao">
-              <button id="btjs" onClick="adiciona(${pokemonData.id})">Adicionar</button>
-              <button id="btjsExcluir">Detalhes</button>
+              <div class="buttonDiv">
+                <button class="adicionarButton" onClick="adiciona(${pokemonData.id})">Adicionar</button>
+                <button class="detalhesButton">Detalhes</button>
+              </div>
             </div>
           `;
 

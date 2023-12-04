@@ -58,9 +58,23 @@ img {
     margin-bottom: 10vh;
 }
 
+.direita{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin-left: 25px;
+}
+
 .buttonDiv{
-    padding-bottom: 4vh;
-    margin-left: 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: 25px;
+    margin-bottom: 10px;
 }
 
 .buttonDiv button:hover {
@@ -71,16 +85,17 @@ img {
     transform: translateY(2px);
 }
 
-
-.detalhesButton{
-    margin-right: 10px;
-    background-color: white;
-    color: black;
-}
-
 .adicionarButton{
+    padding: 2px;
     background-color: black;
     color: white;
+}
+
+.detalhesButton{
+    margin-top: 6px;
+    padding: 2px;
+    background-color: white;
+    color: black;
 }
 
 .detalhesButton, .adicionarButton{
