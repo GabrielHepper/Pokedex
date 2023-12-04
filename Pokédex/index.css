@@ -126,3 +126,60 @@ img {
     border-radius: 10px;
     padding: 4px;
 }
+
+.dialog{
+    width: 30vw;
+    height: 70vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.nomeDialog{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.status {
+    display: flex;
+    align-items: left;
+    text-align: left;
+    margin-top: 15px;
+    margin-left: 5px;
+}
+
+.status p {
+    font-size: larger;
+    margin-top: 5px;
+}
+
+.barra-dano-container {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    height: 20px;
+    width: 70%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: 10px; 
+}
+
+.barra-dano {
+    height: 100%;
+    background-color: #4CAF50;
+    position: relative;
+    width: 100%;
+}
+
+.numero-dano {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(+50%, -50%); 
+    color: #fff;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+}
+
