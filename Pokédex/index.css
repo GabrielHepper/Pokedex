@@ -128,11 +128,12 @@ img {
 }
 
 .dialog{
-    width: 30vw;
+    width: 42vw;
     height: 70vh;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .nomeDialog{
@@ -156,7 +157,7 @@ img {
 
 .barra-dano-container {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     position: relative;
     height: 20px;
     width: 70%;
@@ -174,9 +175,7 @@ img {
 
 .numero-dano {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(+50%, -50%); 
+    margin-left: 10px;
     color: #fff;
     z-index: 2;
     display: flex;
