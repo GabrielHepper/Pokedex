@@ -104,7 +104,7 @@ fetch(`https://pokeapi.co/api/v2/pokemon`)
   function abrirDialog(id) {
     fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
       .then(response => response.json())
-      .then(function(pokemonData) {
+      .then(function (pokemonData) {
         const dialog = document.createElement('dialog');
         dialog.classList.add("dialog");
   
@@ -114,10 +114,10 @@ fetch(`https://pokeapi.co/api/v2/pokemon`)
           fetch(`https://pokeapi.co/api/v2/ability/${abilityName}`)
             .then(response => response.json())
         );
-
+  
         const statsPromise = fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
           .then(response => response.json());
-
+  
         Promise.all([Promise.all(abilityPromises), statsPromise])
           .then(([abilityDataArray, statsData]) => {
             const abilitiesInfo = abilityDataArray.map((abilityData, index) => {
@@ -130,23 +130,23 @@ fetch(`https://pokeapi.co/api/v2/pokemon`)
                 <div class="status">
                   <p>${abilities[index]}</p>
                   <div class="barra-dano-container">
-                    <div class="barra-dano" style="width: ${barWidth}%"></div>
+                    <div class="barra-dano" style="width: ${barWidth}%;"></div>
                     <div class="numero-dano">${power}</div>
                   </div>
                 </div>
               `;
             });
-
+  
             const statsInfo = statsData.stats.map(stat => `
               <div class="status">
                 <p>${stat.stat.name.charAt(0).toUpperCase() + stat.stat.name.slice(1)}</p>
                 <div class="barra-dano-container">
-                  <div class="barra-dano" style="width: ${stat.base_stat}%"></div>
+                  <div class="barra-dano" style="width: ${stat.base_stat}%;"></div>
                   <div class="numero-dano">${stat.base_stat}</div>
                 </div>
               </div>
             `).join('');
-
+  
             dialog.innerHTML = `
               <div class="nomeDialog">
                 <h2>${pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1)}</h2>
@@ -157,33 +157,45 @@ fetch(`https://pokeapi.co/api/v2/pokemon`)
   
             document.body.appendChild(dialog);
   
-            dialog.addEventListener('click', function(event) {
+            dialog.addEventListener('click', function (event) {
               if (event.target === dialog) {
                 dialog.close();
               }
             });
   
+            const allBars = dialog.querySelectorAll('.barra-dano');
+  
+            if (pokemonData.types[0]) {
+              const primaryType = pokemonData.types[0].type.name;
+              const typeColor = getTypeColor(primaryType);
+  
+              allBars.forEach(bar => {
+                bar.style.backgroundColor = typeColor;
+              });
+            }
+  
             dialog.showModal();
           });
       });
   }
-
-
+  
+  function getTypeColor(typeName) {
+    if (typeName === "grass") {
+      return "rgb(2, 194, 2)";
+    } else if (typeName === "fire") {
+      return "red";
+    } else if (typeName === "water") {
+      return "rgb(80, 80, 270)";
+    } else if (typeName === "bug") {
+      return "brown";
+    } else if (typeName === "normal") {
+      return "gray";
+    } else {
+      return "black";
+    }
+  }
   
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
   function adiciona(id) {
     const div = document.getElementById(`pokemon${id}`)
     div.remove()
