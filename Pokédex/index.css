@@ -290,8 +290,8 @@ main {
 }
 
 .dialog{
-    width: 42vw;
-    height: 70vh;
+    width: 45vw;
+    height: 90vh;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -335,11 +335,11 @@ main {
 }
 
 .numero-dano {
+    display: flex;
+    justify-content: right;
+    align-items: center;
     position: absolute;
-    margin-left: 10px;
     color: #fff;
     z-index: 2;
-    display: flex;
-    align-items: center;
 }
 

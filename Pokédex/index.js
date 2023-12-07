@@ -16,7 +16,7 @@ fetch(`https://pokeapi.co/api/v2/pokemon`)
           tipos = tipos.join('');
 
           pokemons.id = `pokemon${pokemonData.id}`;
-
+          console.log(pokemonData.height)
           pokemons.innerHTML = `
           <div class="pokemon">
             <div class="foto">
@@ -37,7 +37,7 @@ fetch(`https://pokeapi.co/api/v2/pokemon`)
 
               <div class="buttonDiv">
                 <button class="adicionarButton" onClick="adiciona(${pokemonData.id})">Adicionar</button>
-                <button class="detalhesButton">Detalhes</button>
+                <button class="detalhesButton" onClick="abrirDialog(${pokemonData.id})">Detalhes</button>
               </div>
             </div>
           </div>
@@ -77,8 +77,6 @@ fetch(`https://pokeapi.co/api/v2/pokemon`)
                 <div class="status">
                   <p>${abilities[index]}</p>
                   <div class="barra-dano-container">
-                    <div class="barra-dano" style="width: ${barWidth}%;"></div>
-                    <div class="numero-dano">${power}</div>
                   </div>
                 </div>
               `;
@@ -89,17 +87,22 @@ fetch(`https://pokeapi.co/api/v2/pokemon`)
                 <p>${stat.stat.name.charAt(0).toUpperCase() + stat.stat.name.slice(1)}</p>
                 <div class="barra-dano-container">
                   <div class="barra-dano" style="width: ${stat.base_stat}%;"></div>
-                  <div class="numero-dano">${stat.base_stat}</div>
+                  <div class="numero-dano" style="width: ${stat.base_stat}%;">${stat.base_stat}</div>
                 </div>
               </div>
             `).join('');
-  
+
+      
             dialog.innerHTML = `
               <div class="nomeDialog">
                 <h2>${pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1)}</h2>
               </div>
-              ${abilitiesInfo.join('')}
-              ${statsInfo}
+                ${abilitiesInfo.join('')}
+                ${statsInfo}
+              <div class="gif">
+                <img src="${pokemonData.sprites.front_default}" alt="Foto do Pokémon">
+                <img src="${pokemonData.sprites.back_default}" alt="Foto do Pokémon de costas">
+              </div>
             `;
   
             document.body.appendChild(dialog);
@@ -124,6 +127,22 @@ fetch(`https://pokeapi.co/api/v2/pokemon`)
             dialog.showModal();
           });
       });
+  }
+
+  function getTypeColor(typeName) {
+    if (typeName === "grass") {
+      return "rgb(2, 194, 2)";
+    } else if (typeName === "fire") {
+      return "red";
+    } else if (typeName === "water") {
+      return "rgb(80, 80, 270)";
+    } else if (typeName === "bug") {
+      return "brown";
+    } else if (typeName === "normal") {
+      return "gray";
+    } else {
+      return "black";
+    }
   }
   
   function adiciona(id) {
