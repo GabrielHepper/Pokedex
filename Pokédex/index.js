@@ -36,7 +36,7 @@ fetch(`https://pokeapi.co/api/v2/pokemon`)
               </div>
 
               <div class="buttonDiv">
-                <button class="adicionarButton" onClick="adiciona(${pokemonData.id})">Adicionar</button>
+                <button class="adicionarButton" id="adicionar" onClick="adiciona(${pokemonData.id})">Adicionar</button>
                 <button class="detalhesButton" onClick="abrirDialog(${pokemonData.id})">Detalhes</button>
               </div>
             </div>
@@ -162,7 +162,14 @@ function getTypeColor(typeName) {
 }
 
 function adiciona(id) {
-  const div = document.getElementById(`pokemon${id}`)
-  div.remove()
-  console.log("Pokémon adicionado com sucesso!");
-};
+const div = document.getElementById(`pokemon${id}`);
+const botao = document.getElementById("adicionar");
+div.remove();
+
+ let storedPokemon =  JSON.parse(localStorage.getItem("pokemons") || [])
+ storedPokemon.push({ html: div.innerHTML })
+ localStorage.setItem("pokemons", JSON.stringify(storedPokemon));
+
+botao.remover();
+console.log("Pokémon adicionado à Pokédex com sucesso!");
+}
