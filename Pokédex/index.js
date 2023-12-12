@@ -76,12 +76,12 @@ function abrirDialog(id) {
 
             const barWidth = Math.min(power * 100, 100);
 
-            return `
-                <div class="status">
-                  <div class="barra-dano-container">
-                  </div>
-                </div>
-              `;
+            // return `
+            //     <div class="status">
+            //       <div class="barra-dano-container">
+            //       </div>
+            //     </div>
+            //   `;
           });
 
           const statsInfo = statsData.stats.map(stat => `
@@ -100,22 +100,26 @@ function abrirDialog(id) {
               <div class="conteudoDialog">
               <div>
               <div class="pokemonView">
+                <p class="pokemon-id-back">#${pokemonData.id}</p>
                 <div class="subgrid">
-                <div class="nomeDialog"<h2>${pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1)}</h2></div>
-                <div class="type">${tipos}</div>
-                <div class="detalhes">
-                <div class="row"><p>Altura:</p><span>${pokemonData.height}</span></div>
-                <div class="row"><p>Peso:</p><span>${pokemonData.weight}</span></div>
-                </div>
-                </div>
-
                 <div class="picture">
                 <img src="${pokemonData.sprites.front_default}" alt="Foto do Pokémon">
                 <img src="${pokemonData.sprites.back_default}" alt="Foto do Pokémon de costas">
                 </div>
+
+                <div class="nomeDialog"<h2>${pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1)}</h2></div>
+
+                <div class="type">${tipos}</div>
+
+                <div class="detalhes">
+                <div class="row"><p>Altura:</p><span>${pokemonData.height}M</span></div>
+                <div class="row"><p>Peso:</p><span>${pokemonData.weight}KG</span></div>
+                </div>
+                </div>
               </div>
               </div>
               </div>
+              <div class="aviso">STATUS</div>
               </div>
                 ${abilitiesInfo.join('')}
                 ${statsInfo}
