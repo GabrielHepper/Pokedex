@@ -44,6 +44,7 @@ fetch(`https://pokeapi.co/api/v2/pokemon`)
           `;
 
           lista.appendChild(pokemons);
+          updateButtons();
         });
     });
   });
@@ -164,6 +165,19 @@ function getTypeColor(typeName) {
     return "black";
   }
 }
+
+function updateButtons() {
+  storedPokemon.forEach(pokemon => {
+    const div = document.getElementById(`pokemon${pokemon.id}`);
+    const botao = div.querySelector(".adicionarButton");
+
+    if (botao) {
+      botao.innerHTML = "Remover";
+    }
+  });
+}
+
+let storedPokemon = JSON.parse(localStorage.getItem("pokemons")) || [];
 
 function adiciona(id) {
   const div = document.getElementById(`pokemon${id}`);

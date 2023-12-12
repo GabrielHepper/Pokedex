@@ -8,7 +8,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         pokedexLista.appendChild(div);
 
-        //console.log(pokemon.html)
+        const botao = div.querySelector(".adicionarButton");
+        if (botao) {
+          botao.innerHTML = "Remover";
+      }
         
     });
 });
