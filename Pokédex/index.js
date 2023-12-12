@@ -162,14 +162,24 @@ function getTypeColor(typeName) {
 }
 
 function adiciona(id) {
-const div = document.getElementById(`pokemon${id}`);
-const botao = document.getElementById("adicionar");
-div.remove();
+  const div = document.getElementById(`pokemon${id}`);
+  const botao = div.querySelector(".adicionarButton");
 
- let storedPokemon =  JSON.parse(localStorage.getItem("pokemons") || [])
- storedPokemon.push({ html: div.innerHTML })
- localStorage.setItem("pokemons", JSON.stringify(storedPokemon));
+  let storedPokemon = JSON.parse(localStorage.getItem("pokemons")) || [];
 
-botao.remover();
-console.log("Pokémon adicionado à Pokédex com sucesso!");
+  const existingPokemonIndex = storedPokemon.findIndex(pokemon => pokemon.id === id);
+
+  if (existingPokemonIndex !== -1) {
+    storedPokemon.splice(existingPokemonIndex, 1);
+    botao.innerHTML = "Adicionar";
+    console.log(`Pokémon com ID ${id} removido da Pokédex.`);
+  } else {
+    storedPokemon.push({ id, html: div.innerHTML });
+    botao.innerHTML = "Remover";
+    console.log(`Pokémon com ID ${id} adicionado à Pokédex.`);
+  } 
+
+  localStorage.setItem("pokemons", JSON.stringify(storedPokemon));
+
+  console.log("Pokémon adicionado à Pokédex com sucesso!");
 }
