@@ -33,6 +33,9 @@ main {
     padding-right: 20px
 }
 
+.header-bg {
+    background: linear-gradient(90deg, #f0f0f0 17%, #fff 56%)
+}
 
 .header {
     display: flex;
@@ -41,7 +44,6 @@ main {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background: linear-gradient(90deg, #f0f0f0 17%, #fff 56%);
 }
 
 .header-menu {
@@ -289,12 +291,14 @@ main {
 }
 
 .dialog {
-    width: 60%;
-    height: 80%;
+    width: 45%;
+    height: 90%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: 'Rubik', sans-serif;
+    border-radius: 30px;
+    border: none;
 }
 
 .conteudoDialog {
@@ -308,13 +312,16 @@ main {
     display: flex;
     align-items: center;
     margin-top: 15px;
-    margin-left: 35%;
+    margin-left: 34%;
+    font-family: 'Rubik', sans-serif;
+    font-style: normal;
+    font-weight: bold;
 }
 
 .status p {
     font-size: larger;
     margin-top: 5px;
-    width: 150px;
+    width: 157px;
 }
 
 .barra-dano-container {
@@ -324,6 +331,13 @@ main {
     width: 40%;
     margin-top: 10px;
     margin-left: 25px;
+    font-size: .8rem;
+}
+
+.barra-dano-container .numero-dano {
+    font-size: small;
+    font-weight: normal;
+    margin-left: 1%;
 }
 
 .barra-dano {
@@ -333,11 +347,10 @@ main {
 
 .numero-dano {
     display: flex;
-    justify-content: right;
-    align-items: center;
+    justify-content: left;
+    
     position: absolute;
-    color: #fff;
-    z-index: 2;
+    color: white;
 }
 
 /* Dialog */
@@ -347,10 +360,10 @@ main {
     padding-bottom: 40px;
     position: relative;
 }
+
 .pokemonView {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
     width: 100%;
 }
 
@@ -360,17 +373,14 @@ main {
 }
 
 .subgrid {
-    min-width: 50%;
+    min-width: 55%;
     display: grid;
     grid-template-areas:
-        "... ..."
         "emoji type"
         "emoji name"
-        "desc desc"
         "details details";
-    grid-template-rows: 100px min-content min-content min-content;
+    grid-template-rows: 200px min-content min-content min-content;
     grid-template-columns: min-content;
-    margin-top: 10px;
 }
 
 .type {
@@ -381,6 +391,7 @@ main {
     font-weight: 500;
     display: flex;
     gap: .5rem;
+    transform: translateY(235%);
 }
 
 .type p {
@@ -390,17 +401,16 @@ main {
 }
 
 .subgrid .nomeDialog {
-    grid-area: name;
     font-family: 'Rubik', sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 4em;
     line-height: 60px;
     color: black;
-    text-transform: capitalize;
 }
 
 .detalhes {
+    padding-top: 6px;
     grid-area: details;
     width: 100%;
 }
@@ -412,10 +422,13 @@ main {
 .row {
     display: flex;
     text-transform: capitalize;
-    justify-content: space-between;
 }
 
-.picture { 
+span {
+    padding-left: 10px;
+}
+
+.picture {
     flex-direction: row;
     display: flex;
     pointer-events: none;
@@ -423,11 +436,34 @@ main {
     width: 200px;
     z-index: 2;
     text-align: center;
-    margin-top: 75px;
+    gap: 150px;
+    transform: translateX(-30%);
 }
 
 .picture img {
     position: relative;
     height: 200px;
     width: 200px;
+}
+
+.pokemon-id-back {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10rem;
+    font-weight: 800;
+    z-index: -1;
+    color: #cececebb;
+}
+
+.content .aviso {
+    margin-top: 57px;
+    position: absolute;
+    transform: translateX(280%);
+    font-size: 2.3rem;
+    font-weight: 800;
+    color: #cececebb;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
 }
