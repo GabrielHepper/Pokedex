@@ -31,8 +31,8 @@ fetch(`https://pokeapi.co/api/v2/pokemon`)
                 ${tipos}
                 </div>
               <div class="pokemon-status">
-                <p class="statusAltura">${pokemonData.height}m</p>
-                <p class="statusPeso">${pokemonData.weight}kg</p>
+                <p class="statusAltura">${pokemonData.height/10}m</p>
+                <p class="statusPeso">${pokemonData.weight/10}kg</p>
               </div>
 
               <div class="buttonDiv">
@@ -90,7 +90,7 @@ function abrirDialog(id) {
                 <p>${stat.stat.name.charAt(0).toUpperCase() + stat.stat.name.slice(1)}</p>
                 <div class="barra-dano-container">
                   <div class="barra-dano" style="width: ${stat.base_stat}%;"></div>
-                  <div class="numero-dano">${stat.base_stat}</div>
+                  <p class="numero-dano">${stat.base_stat}</p>
                 </div>
               </div>
             `).join('');
@@ -113,8 +113,8 @@ function abrirDialog(id) {
                 <div class="type">${tipos}</div>
 
                 <div class="detalhes">
-                <div class="row"><p>Altura:</p><span>${pokemonData.height}M</span></div>
-                <div class="row"><p>Peso:</p><span>${pokemonData.weight}KG</span></div>
+                <div class="row"><p>Altura:</p><span>${pokemonData.height/10}M</span></div>
+                <div class="row"><p>Peso:</p><span>${pokemonData.weight/10}KG</span></div>
                 </div>
                 </div>
               </div>
@@ -152,15 +152,15 @@ function abrirDialog(id) {
 
 function getTypeColor(typeName) {
   if (typeName === "grass") {
-    return "rgb(2, 194, 2)";
+    return "#78C850";
   } else if (typeName === "fire") {
-    return "red";
+    return "#F08030";
   } else if (typeName === "water") {
-    return "rgb(80, 80, 270)";
+    return "#6890F0";
   } else if (typeName === "bug") {
-    return "brown";
+    return "#A8B820";
   } else if (typeName === "normal") {
-    return "gray";
+    return "#A8A878";
   } else {
     return "black";
   }

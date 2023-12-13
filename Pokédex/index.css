@@ -291,13 +291,14 @@ main {
 }
 
 .dialog {
-    width: 60%;
-    height: 80%;
+    width: 45%;
+    height: 90%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: 'Rubik', sans-serif;
     border-radius: 30px;
+    border: none;
 }
 
 .conteudoDialog {
@@ -330,6 +331,13 @@ main {
     width: 40%;
     margin-top: 10px;
     margin-left: 25px;
+    font-size: .8rem;
+}
+
+.barra-dano-container .numero-dano {
+    font-size: small;
+    font-weight: normal;
+    margin-left: 1%;
 }
 
 .barra-dano {
@@ -339,11 +347,10 @@ main {
 
 .numero-dano {
     display: flex;
-    justify-content: right;
-    align-items: center;
+    justify-content: left;
+    
     position: absolute;
-    color: #fff;
-    z-index: 2;
+    color: white;
 }
 
 /* Dialog */
@@ -384,6 +391,7 @@ main {
     font-weight: 500;
     display: flex;
     gap: .5rem;
+    transform: translateY(235%);
 }
 
 .type p {
@@ -402,6 +410,7 @@ main {
 }
 
 .detalhes {
+    padding-top: 6px;
     grid-area: details;
     width: 100%;
 }
@@ -413,7 +422,10 @@ main {
 .row {
     display: flex;
     text-transform: capitalize;
-    justify-content: space-between;
+}
+
+span {
+    padding-left: 10px;
 }
 
 .picture {
@@ -448,7 +460,7 @@ main {
 .content .aviso {
     margin-top: 57px;
     position: absolute;
-    transform: translateX(170%);
+    transform: translateX(280%);
     font-size: 2.3rem;
     font-weight: 800;
     color: #cececebb;
