@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">    
+    <title>Equipes</title>
+    <link rel="stylesheet" href="times.css" />
+</head>
+<body>
+    <h1 id="title">Gerenciar Times</h1>
+    <h2 id="title">Adicionar Times</h2>
+    <form id="formTime">
+        <label for="idTime">ID: </label>
+        <input type="text" id="idTime" name="idTime" required>
+
+        <label for="nomeTime">Nome: </label>
+        <input type="text" id="nomeTime" name="nomeTime" required>
+        
+        <label for="estadio">Estádio: </label>
+        <input type="text" id="estadio" name="estadio" required>
+
+        <label for="local">Localização: </label>
+        <input type="text" id="local" name="local" required>
+
+        <label for="foto">Foto: </label>
+        <input type="file" id="foto" name="foto" accept="image/*" required />
+
+        <label for="resumo">Apelido: </label>
+        <input type="text" id="resumo" name="resumo">
+    
+        <button type="button" onclick="adicionarEquipe()">Adicionar</button>
+    </form>
+
+    <main>
+        <div id="Case">
+            <div class="times-lista" id="listaTimes"></div>
+        </div>
+    </main>
+
+    <script src="../times/times.js"></script>
+</body>
+</html>

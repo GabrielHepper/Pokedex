@@ -1,0 +1,313 @@
+/* Geral */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #1c1c1c;
+  font-family: 'Rubik', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #f0f0f0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+main {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Header */
+.container {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px
+}
+
+.header-bg {
+  background: linear-gradient(90deg, #f0f0f0 17%, #fff 56%)
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.header-menu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  color: #141414;
+  transition: all .2s;
+}
+
+.header-menu a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 12px 12px;
+  border-radius: 30px;
+  transition: all .2s;
+  position: relative;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.header-menu a:hover {
+  background-color: #2e2e2e;
+  color: #f7f7f7;
+  transform: translateY(-2px)
+}
+
+.times-lista {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.pokemon {
+  border-radius: 1rem;
+  background-color: #f7f7f7;
+  box-shadow: 0 0 3rem -1rem rgba(0, 0, 0, .25);
+  padding-block: 1rem;
+  text-transform: uppercase;
+  position: relative;
+  isolation: isolate;
+}
+
+.foto {
+  padding-inline: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.foto img {
+  width: 100%;
+  max-width: 6rem;
+}
+
+.informacao {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  padding-inline: 1rem;
+  align-items: center;
+  text-align: center;
+}
+
+.nome {
+  display: flex;
+  align-items: center;
+  column-gap: .5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nome h2 {
+  font-size: 1.4rem;
+}
+
+/* Tipos */
+.tipo {
+  display: flex;
+  gap: .5rem;
+  font-size: .75rem;
+  font-weight: 500;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tipo p {
+  padding: .25rem .5rem;
+  border-radius: 100vmax;
+}
+
+.pokemon-status {
+  display: inline-grid;
+  gap: 8px;
+  font-size: .85rem;
+}
+
+/* Formulário */
+form {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+input,
+button {
+  width: 100%;
+  padding: 10px;  
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: rgb(53, 53, 53);
+  color: #fff;
+  cursor: pointer;
+  border: none;
+}
+
+button:hover {
+  background-color: rgb(85, 85, 85);
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+}
+
+/* Times */
+.times-lista {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.times {
+  border-radius: 1rem;
+  background-color: #f7f7f7;
+  box-shadow: 0 0 3rem -1rem rgba(0, 0, 0, .25);
+  padding-block: 1rem;
+  text-transform: uppercase;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
+.foto {
+  padding-inline: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.foto img {
+  width: 100%;
+  max-width: 6rem;
+}
+
+.informacao {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  padding-inline: 1rem;
+  align-items: center;
+  text-align: center;
+}
+
+.nome {
+  display: flex;
+  align-items: center;
+  column-gap: .5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nome h2 {
+  font-size: 1.4rem;
+}
+
+.statusAltura {
+  background-color: #ececec;
+  padding: .5rem .5rem;
+  border-radius: 100vmax;
+}
+
+.statusPeso {
+  background-color: #ececec;
+  padding: .5rem .5rem;
+  border-radius: 100vmax;
+}
+
+i {
+  padding-right: 0.5rem;
+}
+
+/* Tipos */
+.tipo {
+  display: flex;
+  gap: .5rem;
+  font-size: .75rem;
+  font-weight: 500;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tipo p {
+  padding: .25rem .5rem;
+  border-radius: 100vmax;
+}
+
+/* Botão */
+.buttonDiv button:hover {
+  opacity: 0.7;
+}
+
+.buttonDiv button:active {
+  transform: translateY(2px);
+}
+
+.buttonDiv {
+  padding-top: 1rem;
+  display: inline-block;
+}
+
+.excluirButton {
+  padding: .40rem .5rem;
+  border-radius: 100vmax;
+  background-color: rgb(102, 0, 0);
+  font-weight: 500;
+  color: white;
+}
+
+.detalhesButton {
+  padding: .40rem;
+  border-radius: 100vmax;
+  background-color: rgb(53, 53, 53);
+  font-weight: 500;
+  color: white;
+}
+
+.detalhesButton,
+.adicionarButton {
+  cursor: pointer;
+}
+
+h1, h2 {
+  padding-top: 3rem;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}

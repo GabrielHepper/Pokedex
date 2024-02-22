@@ -1,0 +1,28 @@
+{
+  "times": [
+    {
+      "id": 1,
+      "nome": "inte",
+      "estadio": "beira",
+      "local": "porto",
+      "foto": "../assets/Escudo_do_Sport_Club_Internacional.svg.png",
+      "resumo": "sss"
+    },
+    {
+      "id": 2,
+      "nome": "fla",
+      "estadio": "maraca",
+      "local": "rj",
+      "foto": "../assets/Flamengo_braz_logo.svg.png",
+      "resumo": "vapo"
+    },
+    {
+      "id": 3,
+      "nome": "zeiro",
+      "estadio": "mina",
+      "local": "bh",
+      "foto": "../assets/Cruzeiro_Esporte_Clube_(logo).svg.png",
+      "resumo": "maria"
+    }
+  ]
+}
